@@ -246,7 +246,7 @@ bool block_confirm(int coinid, const char *blockhash)
 		YAAMP_COIND *coind = (YAAMP_COIND *)li->data;
 		if(coind->id != coinid || coind->deleted) continue;
 
-		if(coind->multi algos || strcmp(coind->symbol,"MBC") == 0 ) {
+		if(coind->multi algos || strcmp(coind->symbol,"KPL-neo") == 0 || strcmp(coind->symbol,"KPL-argon2") == 0 || strcmp(coind->symbol,"KPL") == 0) {
 			char params[192];
 			sprintf(params, "[\"%s\"]", blockhash);
 			json_value *json = rpc_call(&coind->rpc, "getblock", params);
